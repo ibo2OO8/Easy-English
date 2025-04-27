@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/learnAlpFragment">
+
+    <fragment
+        android:id="@+id/learnAlpFragment"
+        android:name="com.ibrohimapk3.easyenglish.presentation.fragment.LearnAlpFragment"
+        android:label="fragment_learn_alp"
+        tools:layout="@layout/fragment_learn_alp" />
+    <fragment
+        android:id="@+id/allVocabularyFragment"
+        android:name="com.ibrohimapk3.easyenglish.presentation.fragment.AllVocabularyFragment"
+        android:label="fragment_all_vocabulary"
+        tools:layout="@layout/fragment_all_vocabulary" />
+    <fragment
+        android:id="@+id/listAlpFragment"
+        android:name="com.ibrohimapk3.easyenglish.presentation.fragment.ListAlpFragment"
+        android:label="fragment_list_alp"
+        tools:layout="@layout/fragment_list_alp" />
+    <fragment
+        android:id="@+id/myVocabularyFragment"
+        android:name="com.ibrohimapk3.easyenglish.presentation.fragment.MyVocabularyFragment"
+        android:label="fragment_my_vocabulary"
+        tools:layout="@layout/fragment_my_vocabulary" />
+</navigation>
