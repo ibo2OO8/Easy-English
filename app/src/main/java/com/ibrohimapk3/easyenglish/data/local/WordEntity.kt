@@ -13,5 +13,5 @@ data class WordEntity(
     var english: String? = "",
 
     @ColumnInfo(name = "russian")
-    var russian: String? = "",
+    var russian: String? = ""
 )

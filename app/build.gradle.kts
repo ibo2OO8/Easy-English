@@ -42,6 +42,7 @@ android {
 dependencies {
     implementation(libs.androidx.room.ktx)
     kapt("androidx.room:room-compiler:2.7.1")
+    implementation("androidx.room:room-runtime:2.7.1")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
