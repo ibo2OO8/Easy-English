@@ -1,6 +1,6 @@
 package com.ibrohimapk3.easyenglish.data
 
-class ListA1 {
+object ListA1 {
     val a1Words = listOf(
         "apple" to "яблоко",
         "book" to "книга",

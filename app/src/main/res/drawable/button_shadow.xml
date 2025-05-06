@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Тень -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#50000000"/> <!-- Цвет тени: черный с прозрачностью -->
+            <corners android:radius="5dp" /> <!-- Радиус скругления углов -->
+            <padding
+                android:left="0dp"
+                android:top="0dp"
+                android:right="0dp"
+                android:bottom="3dp"/> <!-- Отступ для тени -->
+        </shape>
+    </item>
+    <!-- Кнопка -->
+    <item android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white"
+                /> <!-- Цвет фона кнопки -->
+            <corners android:radius="4dp"/> <!-- Радиус скругления углов -->
+        </shape>
+    </item>
+</layer-list>

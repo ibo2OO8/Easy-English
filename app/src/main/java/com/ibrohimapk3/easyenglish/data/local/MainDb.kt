@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [WordEntity::class, DaoForVocabulary::class], version = 1)
+@Database(entities = [WordEntity::class], version = 2)
 abstract class MainDb : RoomDatabase() {
     abstract fun getDao(): DaoForVocabulary
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.fragment.MyVocabularyFragment">
+    tools:context=".presentation.view.fragment.MyVocabularyFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_list_vocabulary"
@@ -17,5 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
+        android:src="@drawable/plus"
+        app:maxImageSize="40dp"
         android:layout_margin="20dp" />
 </FrameLayout>

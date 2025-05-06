@@ -3,16 +3,19 @@
     <item
         android:id="@+id/learnAlpFragment"
         android:title=""
-
-        />
-    <item
-        android:id="@+id/allVocabularyFragment"
-        android:title="" />
+        android:icon="@drawable/apple"/>
     <item
         android:id="@+id/listAlpFragment"
-        android:title="" />
-
+        android:enabled="true"
+        android:icon="@drawable/list"
+        android:title="ABC" />
     <item
         android:id="@+id/myVocabularyFragment"
+        android:title=""
+        android:icon="@drawable/img_2"/>
+    <item
+        android:id="@+id/allVocabularyFragment"
+        android:enabled="true"
+        android:icon="@drawable/mylisticon"
         android:title="" />
 </menu>

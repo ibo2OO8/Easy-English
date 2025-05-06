@@ -1,6 +1,7 @@
-package com.ibrohimapk3.easyenglish.presentation
+package com.ibrohimapk3.easyenglish.presentation.view
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -13,10 +14,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
+
         binding.btnNav.setupWithNavController(navController)
+    }
+    fun hideBottomNav(hide: Boolean) {
+        binding.btnNav.visibility = if (hide) View.GONE else View.VISIBLE
     }
 }

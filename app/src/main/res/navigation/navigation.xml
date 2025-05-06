@@ -7,22 +7,35 @@
 
     <fragment
         android:id="@+id/learnAlpFragment"
-        android:name="com.ibrohimapk3.easyenglish.presentation.fragment.LearnAlpFragment"
+        android:name="com.ibrohimapk3.easyenglish.presentation.view.fragment.LearnAlpFragment"
         android:label="fragment_learn_alp"
         tools:layout="@layout/fragment_learn_alp" />
     <fragment
         android:id="@+id/allVocabularyFragment"
-        android:name="com.ibrohimapk3.easyenglish.presentation.fragment.AllVocabularyFragment"
+        android:name="com.ibrohimapk3.easyenglish.presentation.view.fragment.AllVocabularyFragment"
         android:label="fragment_all_vocabulary"
         tools:layout="@layout/fragment_all_vocabulary" />
     <fragment
         android:id="@+id/listAlpFragment"
-        android:name="com.ibrohimapk3.easyenglish.presentation.fragment.ListAlpFragment"
+        android:name="com.ibrohimapk3.easyenglish.presentation.view.fragment.ListAlpFragment"
         android:label="fragment_list_alp"
         tools:layout="@layout/fragment_list_alp" />
     <fragment
         android:id="@+id/myVocabularyFragment"
-        android:name="com.ibrohimapk3.easyenglish.presentation.fragment.MyVocabularyFragment"
+        android:name="com.ibrohimapk3.easyenglish.presentation.view.fragment.MyVocabularyFragment"
         android:label="fragment_my_vocabulary"
-        tools:layout="@layout/fragment_my_vocabulary" />
+        tools:layout="@layout/fragment_my_vocabulary" >
+        <action
+            android:id="@+id/action_myVocabularyFragment_to_addNewWordFragment"
+            app:destination="@id/addNewWordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewWordFragment"
+        android:name="com.ibrohimapk3.easyenglish.presentation.view.fragment.AddNewWordFragment"
+        android:label="fragment_add_new_word"
+        tools:layout="@layout/fragment_add_new_word" >
+        <action
+            android:id="@+id/action_addNewWordFragment_to_myVocabularyFragment"
+            app:destination="@id/myVocabularyFragment" />
+    </fragment>
 </navigation>
