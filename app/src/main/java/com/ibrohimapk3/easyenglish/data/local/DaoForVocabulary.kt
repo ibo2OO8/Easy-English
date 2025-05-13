@@ -1,5 +1,6 @@
 package com.ibrohimapk3.easyenglish.data.local
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -8,10 +9,10 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface DaoForVocabulary {
     @Insert
-    fun insertItem(item: WordEntity)
+    suspend fun insertItem(item: WordEntity)
 
     @Query("SELECT * FROM items")
-    fun getAllItem(): Flow<List<WordEntity>>
+    fun getAllItem(): LiveData<List<WordEntity>>
 
     @Query("DELETE FROM items WHERE english = :english")
     fun deleteItemByTitle(english: String)
@@ -21,4 +22,8 @@ interface DaoForVocabulary {
 
     @Query("DELETE FROM items WHERE id NOT IN (SELECT MIN(id) FROM items GROUP BY english)")
     fun deleteDuplicateData()
+
+
+    @Query("DELETE FROM items")
+    suspend fun deleteAllFromTable()
 }

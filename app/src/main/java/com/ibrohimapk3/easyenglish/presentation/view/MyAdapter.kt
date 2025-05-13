@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ibrohimapk3.easyenglish.R
 import com.ibrohimapk3.easyenglish.domain.Word
 
-
 class MyAdapter() : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
     var shopList = listOf<Word>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -18,8 +17,8 @@ class MyAdapter() : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val shopItem = shopList[position]
-        holder.tvRus.text = shopItem.russian
         holder.tvEng.text = shopItem.english
+        holder.tvRus.text = shopItem.russian
     }
 
     override fun getItemCount(): Int = shopList.size
@@ -28,7 +27,8 @@ class MyAdapter() : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
         val tvEng = view.findViewById<TextView>(R.id.tv_english)
         val tvRus = view.findViewById<TextView>(R.id.tv_russian)
     }
-    fun setList(list : List<Word>){
+
+    fun setList(list: List<Word>) {
         shopList = list
         notifyDataSetChanged()
     }

@@ -4,6 +4,6 @@ import androidx.lifecycle.LiveData
 
 interface VocabularyRepository {
     fun getWordList(): LiveData<List<Word>>
-    fun addWordList(words : Word)
-    fun deleteItem(words : Word)
+    suspend fun addWordList(words : Word)
+    suspend fun deleteItem(words : Word)
 }
