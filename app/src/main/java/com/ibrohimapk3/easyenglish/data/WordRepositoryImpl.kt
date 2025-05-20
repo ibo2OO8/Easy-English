@@ -7,6 +7,7 @@ import com.ibrohimapk3.easyenglish.data.local.DaoForVocabulary
 import com.ibrohimapk3.easyenglish.data.local.WordEntity
 import com.ibrohimapk3.easyenglish.domain.Word
 import com.ibrohimapk3.easyenglish.domain.VocabularyRepository
+
 class WordRepositoryImpl(private val myDao: DaoForVocabulary) : VocabularyRepository {
 
     private val wordList = mutableListOf<Word>()
@@ -33,5 +34,4 @@ class WordRepositoryImpl(private val myDao: DaoForVocabulary) : VocabularyReposi
         wordList.remove(words)
         liveData.value = wordList
     }
-
 }

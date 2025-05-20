@@ -6,20 +6,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ibrohimapk3.easyenglish.R
-import com.ibrohimapk3.easyenglish.data.ListA1.a1Words
-import com.ibrohimapk3.easyenglish.domain.Word
 import com.ibrohimapk3.easyenglish.presentation.view.MainActivity
 import com.ibrohimapk3.easyenglish.presentation.view.MyAdapter
 import com.ibrohimapk3.easyenglish.presentation.viewmodel.MyVocabularyViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MyVocabularyFragment : Fragment() {
-
+    val viewModel : MyVocabularyViewModel by viewModel()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,7 +27,6 @@ class MyVocabularyFragment : Fragment() {
         var rv = view.findViewById<RecyclerView>(R.id.rv_list_vocabulary)
         var adapter = MyAdapter()
         var btn = view.findViewById<FloatingActionButton>(R.id.save_btn)
-        var viewModel = ViewModelProvider(this)[MyVocabularyViewModel::class.java]
         btn.setOnClickListener {
             findNavController().navigate(R.id.action_myVocabularyFragment_to_addNewWordFragment)
         }

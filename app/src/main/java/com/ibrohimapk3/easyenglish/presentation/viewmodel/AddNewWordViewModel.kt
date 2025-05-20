@@ -11,24 +11,15 @@ import com.ibrohimapk3.easyenglish.data.local.MainDb
 import com.ibrohimapk3.easyenglish.domain.UseCase.AddWordUseCase
 import com.ibrohimapk3.easyenglish.domain.UseCase.DeleteWordUseCase
 import com.ibrohimapk3.easyenglish.domain.UseCase.GetWordUseCase
+import com.ibrohimapk3.easyenglish.domain.VocabularyRepository
 import com.ibrohimapk3.easyenglish.domain.Word
 import kotlinx.coroutines.launch
 
-class AddNewWordViewModel(application: Application) : AndroidViewModel(application) {
-    var wordRepositoryImpl: WordRepositoryImpl
+class AddNewWordViewModel(private val repository: VocabularyRepository) : ViewModel() {
 
-    init {
-        var dao = MainDb.getDb(application).getDao()
-        wordRepositoryImpl = WordRepositoryImpl(dao)
-
-    }
-
-    var addWordUseCase = AddWordUseCase(wordRepositoryImpl)
-    var deleteWordUseCase = DeleteWordUseCase(wordRepositoryImpl)
-    var getWordUseCase = GetWordUseCase(wordRepositoryImpl)
     fun addWord(word: Word) {
         viewModelScope.launch {
-            addWordUseCase.addWord(word)
+            repository.addWordList(word)
         }
     }
 }

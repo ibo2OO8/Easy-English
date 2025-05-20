@@ -14,16 +14,16 @@ import com.ibrohimapk3.easyenglish.R
 import com.ibrohimapk3.easyenglish.domain.Word
 import com.ibrohimapk3.easyenglish.presentation.view.MainActivity
 import com.ibrohimapk3.easyenglish.presentation.viewmodel.AddNewWordViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AddNewWordFragment : Fragment() {
-    lateinit var viewModel: AddNewWordViewModel
+    val viewModel: AddNewWordViewModel by viewModel()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         (activity as MainActivity).hideBottomNav(true)
         var view = inflater.inflate(R.layout.fragment_add_new_word, container, false)
-        viewModel = ViewModelProvider(this)[AddNewWordViewModel::class.java]
         var edt_eng = view.findViewById<EditText>(R.id.edt_eng)
         var edt_rus = view.findViewById<EditText>(R.id.edt_rus)
         var btn_save = view.findViewById<Button>(R.id.btn_save)
