@@ -1,13 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.view.fragment.ListAlpFragment">
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_a1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="recyclerView" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#D6EEFF"
+        android:padding="19dp"
+        android:text="A1 – 100 Words"
+        android:textColor="#000000"
+        android:textSize="25sp" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btn_a2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#AACCEE"
+        android:padding="19dp"
+        android:text="A2 – 300 Words"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/btn_b1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#6DDCCF"
+        android:padding="19dp"
+        android:text="B1 – 500 Words"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+</LinearLayout>
