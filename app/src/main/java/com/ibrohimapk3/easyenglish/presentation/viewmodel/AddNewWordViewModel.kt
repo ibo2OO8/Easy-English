@@ -13,9 +13,13 @@ import com.ibrohimapk3.easyenglish.domain.UseCase.DeleteWordUseCase
 import com.ibrohimapk3.easyenglish.domain.UseCase.GetWordUseCase
 import com.ibrohimapk3.easyenglish.domain.VocabularyRepository
 import com.ibrohimapk3.easyenglish.domain.Word
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AddNewWordViewModel(private val repository: VocabularyRepository) : ViewModel() {
+
+@HiltViewModel
+class AddNewWordViewModel @Inject constructor(private val repository: VocabularyRepository) : ViewModel() {
 
     fun addWord(word: Word) {
         viewModelScope.launch {

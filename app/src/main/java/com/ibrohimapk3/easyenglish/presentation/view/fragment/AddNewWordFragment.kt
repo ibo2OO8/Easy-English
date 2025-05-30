@@ -8,16 +8,18 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.ibrohimapk3.easyenglish.R
 import com.ibrohimapk3.easyenglish.domain.Word
 import com.ibrohimapk3.easyenglish.presentation.view.MainActivity
 import com.ibrohimapk3.easyenglish.presentation.viewmodel.AddNewWordViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@AndroidEntryPoint
 class AddNewWordFragment : Fragment() {
-    val viewModel: AddNewWordViewModel by viewModel()
+    val viewModel: AddNewWordViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

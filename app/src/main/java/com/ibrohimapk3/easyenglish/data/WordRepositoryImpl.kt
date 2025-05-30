@@ -7,8 +7,9 @@ import com.ibrohimapk3.easyenglish.data.local.DaoForVocabulary
 import com.ibrohimapk3.easyenglish.data.local.WordEntity
 import com.ibrohimapk3.easyenglish.domain.Word
 import com.ibrohimapk3.easyenglish.domain.VocabularyRepository
+import javax.inject.Inject
 
-class WordRepositoryImpl(private val myDao: DaoForVocabulary) : VocabularyRepository {
+class WordRepositoryImpl @Inject constructor(private val myDao: DaoForVocabulary) : VocabularyRepository {
 
     private val wordList = mutableListOf<Word>()
     private val liveData = MutableLiveData<List<Word>>(wordList)

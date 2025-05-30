@@ -1,27 +1,39 @@
 package com.ibrohimapk3.easyenglish.DI
 
+import android.content.Context
 import androidx.room.Room
 import com.ibrohimapk3.easyenglish.data.WordRepositoryImpl
+import com.ibrohimapk3.easyenglish.data.local.DaoForVocabulary
 import com.ibrohimapk3.easyenglish.data.local.MainDb
 import com.ibrohimapk3.easyenglish.domain.VocabularyRepository
-import com.ibrohimapk3.easyenglish.presentation.viewmodel.AddNewWordViewModel
-import com.ibrohimapk3.easyenglish.presentation.viewmodel.MyVocabularyViewModel
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.module.dsl.viewModel
-import org.koin.dsl.module
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
-val appModule = module {
-    single {
-        Room.databaseBuilder(
-            androidContext(),
+@Module
+@InstallIn(SingletonComponent::class)
+object appModule {
+    @Provides
+    @Singleton
+    fun provideDatabase(@ApplicationContext context: Context): MainDb {
+        return Room.databaseBuilder(
+            context,
             MainDb::class.java,
-            "Easy english"
+            "word_database"
         ).build()
     }
-    single { get<MainDb>().getDao() }
 
-    single <VocabularyRepository> { WordRepositoryImpl(get()) }
+    @Provides
+    fun provideWordDao(db: MainDb): DaoForVocabulary {
+        return db.getDao()
+    }
 
-    viewModel { MyVocabularyViewModel(get()) }
-    viewModel { AddNewWordViewModel(get()) }
+    @Provides
+    fun provideMyVocabularyRepository(dao: DaoForVocabulary): VocabularyRepository {
+        return WordRepositoryImpl(dao)
+    }
+
 }

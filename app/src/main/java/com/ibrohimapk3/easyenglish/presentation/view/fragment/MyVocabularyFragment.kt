@@ -14,10 +14,12 @@ import com.ibrohimapk3.easyenglish.R
 import com.ibrohimapk3.easyenglish.presentation.view.MainActivity
 import com.ibrohimapk3.easyenglish.presentation.view.MyAdapter
 import com.ibrohimapk3.easyenglish.presentation.viewmodel.MyVocabularyViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@AndroidEntryPoint
 class MyVocabularyFragment : Fragment() {
-    val viewModel : MyVocabularyViewModel by viewModel()
+    val viewModel : MyVocabularyViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
