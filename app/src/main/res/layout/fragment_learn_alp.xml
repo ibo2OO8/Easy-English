@@ -78,7 +78,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/imgAlphabet"
+        android:id="@+id/imageAlphabet"
         android:layout_width="0dp"
         android:layout_height="460dp"
         android:scaleType="centerCrop"
@@ -87,5 +87,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_alphabet"
         app:srcCompat="@drawable/a" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
