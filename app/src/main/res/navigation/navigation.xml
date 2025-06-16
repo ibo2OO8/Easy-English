@@ -11,6 +11,18 @@
         android:label="fragment_learn_alp"
         tools:layout="@layout/fragment_learn_alp" />
     <fragment
+        android:id="@+id/ShowVocabularyFragment"
+        android:name="com.ibrohimapk3.easyenglish.presentation.view.fragment.ShowVocabularyFragment"
+        android:label="fragment_learn_alp"
+        tools:layout="@layout/fragment_show_vocabulary" >
+        <action
+            android:id="@+id/action_ShowVocabularyFragment_to_listAlpFragment"
+            app:destination="@id/listAlpFragment" />
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+    </fragment>
+    <fragment
         android:id="@+id/allVocabularyFragment"
         android:name="com.ibrohimapk3.easyenglish.presentation.view.fragment.AllVocabularyFragment"
         android:label="fragment_all_vocabulary"
@@ -19,7 +31,12 @@
         android:id="@+id/listAlpFragment"
         android:name="com.ibrohimapk3.easyenglish.presentation.view.fragment.ListAlpFragment"
         android:label="fragment_list_alp"
-        tools:layout="@layout/fragment_list_alp" />
+        tools:layout="@layout/fragment_list_alp" >
+        <action
+            android:id="@+id/action_listAlpFragment_to_ShowVocabularyFragment"
+            app:destination="@id/ShowVocabularyFragment" />
+
+    </fragment>
     <fragment
         android:id="@+id/myVocabularyFragment"
         android:name="com.ibrohimapk3.easyenglish.presentation.view.fragment.MyVocabularyFragment"
