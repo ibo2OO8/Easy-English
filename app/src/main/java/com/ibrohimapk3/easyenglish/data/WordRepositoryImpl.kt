@@ -13,11 +13,12 @@ class WordRepositoryImpl(private val myDao: DaoForVocabulary) : VocabularyReposi
     private val wordList = mutableListOf<Word>()
     private val liveData = MutableLiveData<List<Word>>(wordList)
 
-    override fun getWordList(): LiveData<List<Word>> {
+    override fun getWordList(): LiveData<MutableList<Word>> {
         return myDao.getAllItem().map { list ->
-            list.map { Word(it.id,  it.russian.toString(), it.english.toString()) }
+            list.map { Word(it.id, it.russian.toString(), it.english.toString()) }.toMutableList()
         }
     }
+
     override suspend fun addWordList(words: Word) {
         myDao.insertItem(
             WordEntity(
@@ -25,13 +26,15 @@ class WordRepositoryImpl(private val myDao: DaoForVocabulary) : VocabularyReposi
             )
         )
         wordList.add(words)
-        liveData.value = wordList
+        liveData.postValue(wordList)
     }
+
     override suspend fun deleteItem(words: Word) {
+
         myDao.deleteItemByTitle(
             words.english
         )
         wordList.remove(words)
-        liveData.value = wordList
+        liveData.postValue(wordList)
     }
 }

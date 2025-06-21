@@ -1,7 +1,7 @@
 package com.ibrohimapk3.easyenglish.data
 import com.ibrohimapk3.easyenglish.domain.Word
 object ListA1 {
-    val a1Words = listOf(
+    val a1Words = mutableListOf(
         Word(russian = "яблоко", english = "apple"),
         Word(russian = "книга", english = "book"),
         Word(russian = "кот", english = "cat"),

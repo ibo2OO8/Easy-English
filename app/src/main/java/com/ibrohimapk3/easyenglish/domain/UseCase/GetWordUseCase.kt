@@ -5,7 +5,7 @@ import com.ibrohimapk3.easyenglish.domain.Word
 import com.ibrohimapk3.easyenglish.domain.VocabularyRepository
 
 class GetWordUseCase(private var vocabularyRepository: VocabularyRepository) {
-    fun getWordList(): LiveData<List<Word>> {
+    fun getWordList(): LiveData<MutableList<Word>> {
         return vocabularyRepository.getWordList()
     }
 }

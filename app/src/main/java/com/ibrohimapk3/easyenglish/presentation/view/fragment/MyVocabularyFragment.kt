@@ -11,12 +11,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ibrohimapk3.easyenglish.R
+import com.ibrohimapk3.easyenglish.domain.Word
+import com.ibrohimapk3.easyenglish.presentation.view.CallBack
 import com.ibrohimapk3.easyenglish.presentation.view.MainActivity
 import com.ibrohimapk3.easyenglish.presentation.view.MyAdapter
 import com.ibrohimapk3.easyenglish.presentation.viewmodel.MyVocabularyViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MyVocabularyFragment : Fragment() {
+class MyVocabularyFragment : Fragment()  , CallBack{
     val viewModel : MyVocabularyViewModel by viewModel()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,12 +27,11 @@ class MyVocabularyFragment : Fragment() {
         var view = inflater.inflate(R.layout.fragment_my_vocabulary, container, false)
         (activity as MainActivity).hideBottomNav(false)
         var rv = view.findViewById<RecyclerView>(R.id.rv_list_vocabulary)
-        var adapter = MyAdapter()
+        var adapter = MyAdapter(this)
         var btn = view.findViewById<FloatingActionButton>(R.id.save_btn)
         btn.setOnClickListener {
             findNavController().navigate(R.id.action_myVocabularyFragment_to_addNewWordFragment)
         }
-        Log.d("helloNi", viewModel.listLiveData.value.toString())
         viewModel.listLiveData.observe(viewLifecycleOwner) {
             it?.let {
                 adapter.setList(it)
@@ -38,5 +39,9 @@ class MyVocabularyFragment : Fragment() {
             rv.adapter = adapter
         }
         return view
+    }
+
+    override fun removeItem(item: Word) {
+        viewModel.deleteWord(item)
     }
 }
