@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ibrohimapk3.easyenglish.R
 import com.ibrohimapk3.easyenglish.domain.Word
-import com.ibrohimapk3.easyenglish.presentation.view.CallBack
-import com.ibrohimapk3.easyenglish.presentation.view.MainActivity
-import com.ibrohimapk3.easyenglish.presentation.view.MyAdapter
+import com.ibrohimapk3.easyenglish.presentation.view.callBack.CallBack
+import com.ibrohimapk3.easyenglish.presentation.view.activity.MainActivity
+import com.ibrohimapk3.easyenglish.presentation.view.adapter.MyAdapter
 import com.ibrohimapk3.easyenglish.presentation.viewmodel.MyVocabularyViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

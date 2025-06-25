@@ -1,15 +1,14 @@
-package com.ibrohimapk3.easyenglish.presentation.view
+package com.ibrohimapk3.easyenglish.presentation.view.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.widget.ButtonBarLayout
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.util.findColumnIndexBySuffix
 import com.ibrohimapk3.easyenglish.R
 import com.ibrohimapk3.easyenglish.domain.Word
+import com.ibrohimapk3.easyenglish.presentation.view.callBack.CallBack
 
 class MyAdapter(
     var callBack: CallBack
