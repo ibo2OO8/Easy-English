@@ -1,4 +1,4 @@
-package com.ibrohimapk3.easyenglish.presentation.view
+package com.ibrohimapk3.easyenglish.presentation.view.activity
 
 import android.os.Bundle
 import android.view.View

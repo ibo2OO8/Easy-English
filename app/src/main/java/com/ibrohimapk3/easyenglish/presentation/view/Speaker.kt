@@ -22,6 +22,15 @@ class Speaker(context: Context) : TextToSpeech.OnInitListener {
 
     fun speak(text: String) {
         if (isReady) {
+
+            tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
+        } else {
+            pendingText = text
+        }
+    }
+    fun speak(text: String , speed: Float) {
+        if (isReady) {
+            tts.setSpeechRate(speed)
             tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
         } else {
             pendingText = text

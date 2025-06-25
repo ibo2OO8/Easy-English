@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.ibrohimapk3.easyenglish.R
 import com.ibrohimapk3.easyenglish.domain.Word
-import com.ibrohimapk3.easyenglish.presentation.view.MainActivity
+import com.ibrohimapk3.easyenglish.presentation.view.activity.MainActivity
 import com.ibrohimapk3.easyenglish.presentation.viewmodel.AddNewWordViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
