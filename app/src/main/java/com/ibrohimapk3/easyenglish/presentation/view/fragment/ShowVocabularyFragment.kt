@@ -2,7 +2,6 @@ package com.ibrohimapk3.easyenglish.presentation.view.fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,9 +15,7 @@ import com.ibrohimapk3.easyenglish.data.ListA2
 import com.ibrohimapk3.easyenglish.data.ListB1
 import com.ibrohimapk3.easyenglish.domain.Word
 import com.ibrohimapk3.easyenglish.presentation.view.Speaker
-import com.ibrohimapk3.easyenglish.presentation.view.callBack.CallBack
-import com.ibrohimapk3.easyenglish.presentation.view.adapter.MyAdapter
-import com.ibrohimapk3.easyenglish.presentation.view.adapter.MyAdapterForListAlp
+import com.ibrohimapk3.easyenglish.presentation.view.adapter.MyAdapterForListVocabulary
 import com.ibrohimapk3.easyenglish.presentation.view.callBack.CallBackForListAlp
 
 class ShowVocabularyFragment : Fragment(), CallBackForListAlp{
@@ -38,7 +35,7 @@ class ShowVocabularyFragment : Fragment(), CallBackForListAlp{
         if (myArg.toString() == "a1") list = ListA1.a1Words
         else if (myArg.toString() == "a2") list = ListA2.a2Words
         else list = ListB1.b1Words
-        var adapter = MyAdapterForListAlp(this)
+        var adapter = MyAdapterForListVocabulary(this)
         adapter.setList(list)
         rcView.adapter = adapter
         backBtn.setOnClickListener {

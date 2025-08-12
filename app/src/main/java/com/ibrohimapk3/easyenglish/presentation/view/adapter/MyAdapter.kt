@@ -10,9 +10,7 @@ import com.ibrohimapk3.easyenglish.R
 import com.ibrohimapk3.easyenglish.domain.Word
 import com.ibrohimapk3.easyenglish.presentation.view.callBack.CallBack
 
-class MyAdapter(
-    var callBack: CallBack
-) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+class MyAdapter(var callBack: CallBack) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
     var shopList = mutableListOf<Word>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)

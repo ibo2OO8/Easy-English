@@ -29,9 +29,9 @@
         tools:layout="@layout/fragment_all_alphabet" />
     <fragment
         android:id="@+id/listAlpFragment"
-        android:name="com.ibrohimapk3.easyenglish.presentation.view.fragment.ListAlpFragment"
+        android:name="com.ibrohimapk3.easyenglish.presentation.view.fragment.ListVocabularyFragment"
         android:label="fragment_list_alp"
-        tools:layout="@layout/fragment_list_alp" >
+        tools:layout="@layout/fragment_list_vocabulary" >
         <action
             android:id="@+id/action_listAlpFragment_to_ShowVocabularyFragment"
             app:destination="@id/ShowVocabularyFragment" />
