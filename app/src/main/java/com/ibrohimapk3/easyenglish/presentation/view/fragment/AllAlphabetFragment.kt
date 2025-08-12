@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ibrohimapk3.easyenglish.R
-class AllVocabularyFragment : Fragment() {
+class AllAlphabetFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_all_vocabulary, container, false)
+        return inflater.inflate(R.layout.fragment_all_alphabet, container, false)
     }
 
 }
